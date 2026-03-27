@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تجربة مصنع حيدر | صفحة هبوط احترافية</title>
+    <style>
+        /* الألوان والخطوط الأساسية */
+        :root {
+            --primary-bg: #111; /* أسود داكن خلفية */
+            --secondary-bg: #1a1a1a; /* أسود فاتح قليلاً للأقسام */
+            --text-color: #eee;
+            --accent-color: #ffd700; /* ذهبي ملكي */
+            --accent-hover: #e6c300;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* حاوية المحتوى الرئيسية */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* رأس الصفحة (Header) */
+        header {
+            background-color: var(--secondary-bg);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--accent-color);
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--accent-color);
+            font-size: 2.5em;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
+            color: #ccc;
+        }
+
+        /* القسم الرئيسي (Hero Section) */
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--accent-color);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+        }
+
+        /* قسم الخدمات/المميزات */
+        .services {
+            padding: 80px 0;
+            background-color: var(--secondary-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background-color: var(--primary-bg);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            text-align: center;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        /* قسم التواصل */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--accent-color);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: right;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--secondary-bg);
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        /* تذييل الصفحة (Footer) */
+        footer {
+            background-color: var(--secondary-bg);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+            color: #aaa;
+        }
+
+        /* استعلامات الوسائط للتجاوب (Mobile First) */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            .hero h2 { font-size: 2.2em; }
+            .hero p { font-size: 1.1em; }
+            .service-item h3 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>رؤية حيدر الرقمية</h1>
+            <p>نصنع المستقبل، كوداً تلو الآخر</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>حوّل فكرتك إلى واقع رقمي</h2>
+            <p>نحن نقدم حلولاً برمجية وتصميمية متكاملة بلمسة ملكية احترافية، مصممة خصيصاً لتلبية احتياجاتك الطموحة.</p>
+            <a href="#contact" class="btn">ابدأ مشروعك الآن</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">💻</div>
+                    <h3>تطوير الويب</h3>
+                    <p>مواقع مخصصة، سريعة وآمنة، مصممة بأحدث التقنيات لضمان أفضل تجربة مستخدم.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📱</div>
+                    <h3>تطبيقات الموبايل</h3>
+                    <p>تطبيقات مبتكرة لنظامي iOS و Android، تجمع بين الأداء العالي والتصميم الجذاب.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🎨</div>
+                    <h3>تصميم واجهات (UI/UX)</h3>
+                    <p>تصاميم عصرية وبديهية تركز على تحويل الزوار إلى عملاء دائمين.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>تحدث إلينا</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">الاسم الكريم:</label>
+                        <input type="text" id="name" class="form-control" placeholder="أدخل اسمك هنا">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني:</label>
+                        <input type="email" id="email" class="form-control" placeholder="example@mail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">رسالتك:</label>
+                        <textarea id="message" class="form-control" rows="5" placeholder="اكتب تفاصيل مشروعك أو استفسارك..."></textarea>
+                    </div>
+                    <button type="submit" class="btn">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 رؤية حيدر الرقمية. جميع الحقوق محفوظة.</p>
+            <p>تم التطوير ببركة الصلوات على محمد وآل محمد.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
