@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تجربة مصنع حيدر | صفحة هبوط ملكية متكاملة</title>
+    <style>
+        /* الألوان والخطوط الأساسية */
+        :root {
+            --primary-bg: #111; /* أسود داكن خلفية */
+            --secondary-bg: #1a1a1a; /* أسود فاتح قليلاً للأقسام */
+            --text-color: #eee;
+            --accent-color: #ffd700; /* ذهبي ملكي */
+            --accent-hover: #e6c300;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            font-family: 'Cairo', sans-serif; /* تغيير الخط لخط عربي فخم */
+            line-height: 1.6;
+            scroll-behavior: smooth; /* تمرير ناعم عند الضغط على الروابط */
+        }
+
+        /* حاوية المحتوى الرئيسية */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* رأس الصفحة (Header) المطوّر */
+        header {
+            background-color: var(--secondary-bg);
+            padding: 40px 0;
+            border-bottom: 2px solid var(--accent-color);
+            text-align: center;
+        }
+
+        /* تعديلات الصورة الشخصية */
+        .profile-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* تأثير التوهج */
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* لضمان عدم تمدد الصورة */
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--accent-color);
+            font-size: 2.5em;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
+            color: #ccc;
+        }
+
+        /* القسم الرئيسي (Hero Section) */
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--accent-color);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+        }
+
+        /* قسم الخدمات/المميزات */
+        .services {
+            padding: 80px 0;
+            background-color: var(--secondary-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background-color: var(--primary-bg);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            text-align: center;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        /* قسم التواصل المطوّر */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--accent-color);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: right;
+            position: relative;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--secondary-bg);
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        /* أنماط رسائل الحالة */
+        #status-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+            font-weight: bold;
+        }
+        .status-success { background-color: rgba(0, 255, 0, 0.1); color: #0f0; border: 1px solid #0f0; }
+        .status-error { background-color: rgba(255, 0, 0, 0.1); color: #f00; border: 1px solid #f00; }
+
+        /* تذييل الصفحة (Footer) */
+        footer {
+            background-color: var(--secondary-bg);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+            color: #aaa;
+        }
+
+        /* استعلامات الوسائط للتجاوب (Mobile First) */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            .profile-container { width: 120px; height: 120px; }
+            .hero h2 { font-size: 2.2em; }
+            .hero p { font-size: 1.1em; }
+            .service-item h3 { font-size: 1.5em; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="profile-container">
+                <img src="https://instagram.fedi2-2.fna.fbcdn.net/v/t51.2885-15/448888123_467771722333111_7999999999999999999_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=3635ab&_nc_ohc=abcdefghijklmnopqrstuvwxyz&_nc_ht=instagram.fedi2-2.fna.fbcdn.net&oh=00_AfC-abcdefghijklmnopqrstuvwxyz&oe=66999999&gda=1719999999_abcdefghijklmnopqrstuvwxyz" alt="صورة حيدر" class="profile-img">
+            </div>
+            <h1>رؤية حيدر الرقمية</h1>
+            <p>نصنع المستقبل، كوداً تلو الآخر</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>حوّل فكرتك إلى واقع رقمي</h2>
+            <p>نحن نقدم حلولاً برمجية وتصميمية متكاملة بلمسة ملكية احترافية، مصممة خصيصاً لتلبية احتياجاتك الطموحة.</p>
+            <a href="#contact" class="btn">ابدأ مشروعك الآن</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">💻</div>
+                    <h3>تطوير الويب</h3>
+                    <p>مواقع مخصصة، سريعة وآمنة، مصممة بأحدث التقنيات لضمان أفضل تجربة مستخدم.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📱</div>
+                    <h3>تطبيقات الموبايل</h3>
+                    <p>تطبيقات مبتكرة لنظامي iOS و Android، تجمع بين الأداء العالي والتصميم الجذاب.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🎨</div>
+                    <h3>تصميم واجهات (UI/UX)</h3>
+                    <p>تصاميم عصرية وبديهية تركز على تحويل الزوار إلى عملاء دائمين.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>تحدث إلينا</h2>
+            <div class="contact-form">
+                <form id="tg-contact-form">
+                    <div class="form-group">
+                        <label for="name">الاسم الكريم:</label>
+                        <input type="text" id="name" class="form-control" placeholder="أدخل اسمك هنا" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني:</label>
+                        <input type="email" id="email" class="form-control" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">رسالتك:</label>
+                        <textarea id="message" class="form-control" rows="5" placeholder="اكتب تفاصيل مشروعك أو استفسارك..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">إرسال الرسالة الملكية 🚀</button>
+                </form>
+                <div id="status-message"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 رؤية حيدر الرقمية. جميع الحقوق محفوظة.</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">تم التطوير ببركة الصلوات على محمد وآل محمد.</p>
+        </div>
+    </footer>
+
+    <script>
+        // === إعدادات تليجرام المحدثة ===
+        const TELEGRAM_BOT_TOKEN = "8686945908:AAEfOj2C-MK6oUrjR0Wan-yHBzHU-wPduO8";
+        const TELEGRAM_CHAT_ID = "5022700372";
+
+        const contactForm = document.getElementById('tg-contact-form');
+        const statusMessage = document.getElementById('status-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // منع تحديث الصفحة عند الإرسال
+
+            // إظهار حالة جاري الإرسال
+            statusMessage.style.display = "block";
+            statusMessage.innerText = "⏳ جاري إرسال الرسالة إلى حيدر...";
+            statusMessage.className = ""; // إعادة تعيين النمط
+
+            // جلب البيانات من الحقول
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // تنسيق الرسالة التي ستصلك على تلجرام
+            const formattedMessage = `
+⚜️ *رسالة جديدة من صفحة الهبوط الملكية* ⚜️
+---------------------------------
+👤 *الاسم الكريم:* ${name}
+📧 *البريد الإلكتروني:* ${email}
+📝 *تفاصيل الرسالة:*
+${message}
+---------------------------------
+تم الإرسال ببركة الصلوات.
+            `;
+
+            // إعداد بيانات الطلب لواجهة برمجة تطبيقات تلجرام
+            const payload = {
+                chat_id: TELEGRAM_CHAT_ID,
+                text: formattedMessage,
+                parse_mode: "Markdown" // لتنسيق النصوص (غامق، مائل)
+            };
+
+            // إرسال البيانات باستخدام Fetch API
+            fetch(`https://api.telegram.com/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    // نجاح الإرسال
+                    statusMessage.innerText = "✅ تم إرسال رسالتك الملكية بنجاح! شكراً لتواصلك.";
+                    statusMessage.className = "status-success";
+                    contactForm.reset(); // تفريغ الحقول
+                } else {
+                    // فشل من جهة تلجرام
+                    statusMessage.innerText = "❌ حدث خطأ في النظام. يرجى المحاولة لاحقاً.";
+                    statusMessage.className = "status-error";
+                    console.error("Telegram Error:", data);
+                }
+            })
+            .catch(error => {
+                // فشل في الاتصال
+                statusMessage.innerText = "❌ خطأ في الاتصال بالسيرفر. تأكد من الإنترنت.";
+                statusMessage.className = "status-error";
+                console.error("Fetch Error:", error);
+            });
+        });
+    </script>
+
+</body>
+</html>
